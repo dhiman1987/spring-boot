@@ -7,7 +7,6 @@ INSERT INTO users (id,username,password) VALUES
   (1,'home'),
   (2,'office');
   
-  
  INSERT INTO todo (id,title,description,category_id,complete,due_date) VALUES
   (1,'todo1','This is a sample todo 1',1,true,'2018-06-12'),
   (2,'todo2','This is a sample todo 2',1,true,'2018-07-11'),
