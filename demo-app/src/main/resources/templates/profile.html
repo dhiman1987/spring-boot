@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Profile</title>
+</head>
+<body>
+	<h1>Profile</h1>
+	<h4>Environment 
+		<span th:text="${environment}" style="color:green;">Dev.</span> 
+		and <span th:text="${serverTime}" style="color:indigo;">Server Time(India/kolkata).12:12:00</span> 
+	</h4>
+	<a href="index.html">Home</a>
+</body>
+</html>

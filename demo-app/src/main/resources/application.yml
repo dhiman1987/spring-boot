@@ -1,3 +1,20 @@
 info:
  author: Dhiman
  organization: CTS
+ 
+---
+spring:
+ profiles: dev
+ 
+my:
+ custom:
+  environment: Developement
+  
+---
+
+spring:
+ profiles: prod
+ 
+my:
+ custom:
+  environment: Production
