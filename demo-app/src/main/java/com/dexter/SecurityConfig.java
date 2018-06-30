@@ -7,6 +7,7 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
@@ -33,14 +34,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 		.authorizeRequests()
-		.antMatchers("/", "/home").permitAll()
+		.antMatchers("/", "/index.html","/login.html").permitAll()
 		.antMatchers("/admin**").hasRole("ADMIN")
 		.antMatchers("/secure**").authenticated()
 		.anyRequest().fullyAuthenticated()
 		.and()
-		.httpBasic()
-		/*.and()
-		.exceptionHandling().accessDeniedPage("/403.html")*/
+		.formLogin()
+		.and()
+		.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 		;
 		
 	}
