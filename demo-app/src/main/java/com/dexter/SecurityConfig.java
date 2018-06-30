@@ -39,11 +39,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.anyRequest().fullyAuthenticated()
 		.and()
 		.httpBasic()
-		.and()
-		.logout()
-		.logoutUrl("/logout.html")
-		.logoutSuccessUrl("/")
-		.permitAll();
+		/*.and()
+		.exceptionHandling().accessDeniedPage("/403.html")*/
+		;
+		
 	}
 
 	@Bean

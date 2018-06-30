@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.apache.tomcat.jni.Time;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +27,11 @@ public class UserController {
 		List<User> users = new ArrayList<>();
 		userRepository.findAll().forEach(users::add);
 		return users;
+	}
+	
+	@GetMapping("/throwError")
+	public void throwError() throws Exception{
+		throw new Exception("Server side error. Time"+Time.now());
 	}
 	
 	@GetMapping("/{username}")
