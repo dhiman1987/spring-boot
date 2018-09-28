@@ -11,7 +11,7 @@ public class MyService {
 	@Value("${my.custom.message}")
 	public String customMessage;
 	
-	@Value("${OS}")
+	@Value("${OS:NOT_FOUND}")
 	public String os;
 	
 	@PostConstruct
